@@ -1,6 +1,7 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+import api from './api.vue'
 </script>
 
 <template>
@@ -9,12 +10,15 @@ import TheWelcome from './components/TheWelcome.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
+      
     </div>
   </header>
 
   <main>
     <TheWelcome />
   </main>
+
+
 </template>
 
 <style scoped>
