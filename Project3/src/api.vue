@@ -1,5 +1,18 @@
 <script lang="js">
 
+  import Button from './api.vue';
+
+  export default {
+    components: {
+      Button,
+    },
+    methods: {
+      handleClick() {
+        console.log('Button clicked!');
+      },
+    },
+  };
+
     var requestOptions = {
         method: 'GET',
         redirect: 'follow'
@@ -16,3 +29,7 @@
       });
   };
 </script>
+
+<template>
+  <Button @click="handleClick()">Click Me</Button>
+</template>
