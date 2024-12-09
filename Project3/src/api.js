@@ -1,28 +1,20 @@
-import Freecurrencyapi from './../currency_API/@everapi/freecurrencyapi-js';
-
-const apiKey = 'fca_live_jL5hrilxX1Sd47JRrMUCE2mI5b1kHxJtbdP6e5Vv'; // Replace with your API key
-const api = new Freecurrencyapi(apiKey);
-
-const fetchExchangeRates = async () => {
-    const baseCurrency = 'USD';  // You can also make this dynamic based on user input
-
-    try {
-        // Call the latest exchange rates API
-        const data = await api.latest({ base_currency: baseCurrency });
-        console.log(data);
-        
-    } catch (error) {
-        console.error('Error fetching exchange rates:', error);
-        const output = document.getElementById('output');
-        output.innerHTML = `<p>Error: ${error.message}</p>`;
-    }
+var requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-    const fetchRatesButton = document.getElementById('fetchRates');
-    if (fetchRatesButton) {
-        fetchRatesButton.addEventListener('click', fetchExchangeRates);
-    } else {
-        console.error("Button with id 'fetchRates' not found.");
-    }
-});
+// Fetch and update specific table rows
+fetch("https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_5e1yhgIXi4IBEg7wWSzvpP1PYuoI3fnJhz1cJBXE", requestOptions)
+    .then(response => response.json()) // Parse the response as JSON
+    .then(result => {
+        const exchangeRates = result.data; // Extract exchange rate data
+
+        // Update table rows with specific currencies
+        document.getElementById("currencyRate1").textContent = exchangeRates.EUR || "N/A"; // Euro
+        document.getElementById("currencyRate2").textContent = exchangeRates.GBP || "N/A"; // Pound Sterling
+        document.getElementById("currencyRate3").textContent = exchangeRates.CNY || "N/A"; // Chinese Yen
+        document.getElementById("currencyRate4").textContent = exchangeRates.INR || "N/A"; // Indian Rupee
+        document.getElementById("currencyRate5").textContent = exchangeRates.KRW || "N/A"; // South Korean Won
+        document.getElementById("currencyRate6").textContent = exchangeRates.CAD || "N/A"; // Canadian Dollar
+    })
+    .catch(error => console.error('Error fetching exchange rates:', error));

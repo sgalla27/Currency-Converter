@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,7 +12,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="src/assets/styles.css" rel="stylesheet" />
-        
+        <script src="./src/api.js" defer></script>
     </head>
     <body>
         <!-- Responsive navbar-->
@@ -45,8 +44,47 @@
         </header>
         <!-- Page Content-->
         
-        <Button id="fetchRates">CLick</Button>
-         
+        <!--Table of Exchange Rates-->
+        <div class="container px-lg-5">
+            <div class="p-4 p-lg-5 bg-light rounded-3">
+                <table class="table table-striped table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Currency</th>
+                            <th>Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Euro</td>
+                            <td id="currencyRate1">Loading...</td>
+                        </tr>
+                        <tr>
+                            <td>Pound Sterling</td>
+                            <td id="currencyRate2">Loading...</td>
+                        </tr>
+                        <tr>
+                            <td>Chinese Yen</td>
+                            <td id="currencyRate3">Loading...</td>
+                        </tr>
+                        <tr>
+                            <td>Indian Rupee</td>
+                            <td id="currencyRate4">Loading...</td>
+                        </tr>
+                        <tr>
+                            <td>South Korean Won</td>
+                            <td id="currencyRate5">Loading...</td>
+                        </tr>
+                        <tr>
+                            <td>Canadian Dollar</td>
+                            <td id="currencyRate6">Loading...</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                
+            </div>
+        </div>
        
         <!-- Footer-->
         <footer class="py-5 bg-dark">
@@ -56,6 +94,5 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <script type ='module' src = './src/api.js' defer></script>
     </body>
 </html>
