@@ -10,7 +10,14 @@ fetch("https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_5e1yhgIXi4IBEg7
         const exchangeRates = result.data; // Extract exchange rate data
 
         const convertCurrency = (usdAmount, rate) => (usdAmount * rate).toFixed(2);
-
+         // Update table rows with specific currencies
+         document.getElementById("currencyRate1").textContent = exchangeRates.EUR || "N/A"; // Euro
+         document.getElementById("currencyRate2").textContent = exchangeRates.GBP || "N/A"; // Pound Sterling
+         document.getElementById("currencyRate3").textContent = exchangeRates.JPY || "N/A"; // Japanese Yen
+         document.getElementById("currencyRate4").textContent = exchangeRates.INR || "N/A"; // Indian Rupee
+         document.getElementById("currencyRate5").textContent = exchangeRates.KRW || "N/A"; // South Korean Won
+         document.getElementById("currencyRate6").textContent = exchangeRates.CAD || "N/A"; // Canadian Dollar
+         
         const currencies = [
             { id: "euro", rate: exchangeRates.EUR },
             { id: "pound", rate: exchangeRates.GBP },
@@ -19,6 +26,8 @@ fetch("https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_5e1yhgIXi4IBEg7
             { id: "won", rate: exchangeRates.KRW },
             { id: "canadian", rate: exchangeRates.CAD }
         ];
+
+
 
         currencies.forEach(currency => {
             const inputField = document.querySelector(`#${currency.id}Input`);
@@ -34,14 +43,5 @@ fetch("https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_5e1yhgIXi4IBEg7
             }
         });
         });
-
-
-        // Update table rows with specific currencies
-        document.getElementById("currencyRate1").textContent = exchangeRates.EUR || "N/A"; // Euro
-        document.getElementById("currencyRate2").textContent = exchangeRates.GBP || "N/A"; // Pound Sterling
-        document.getElementById("currencyRate3").textContent = exchangeRates.JPY || "N/A"; // Japanese Yen
-        document.getElementById("currencyRate4").textContent = exchangeRates.INR || "N/A"; // Indian Rupee
-        document.getElementById("currencyRate5").textContent = exchangeRates.KRW || "N/A"; // South Korean Won
-        document.getElementById("currencyRate6").textContent = exchangeRates.CAD || "N/A"; // Canadian Dollar
     })
     .catch(error => console.error('Error fetching exchange rates:', error));
