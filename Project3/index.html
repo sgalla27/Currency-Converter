@@ -12,6 +12,7 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="src/assets/styles.css" rel="stylesheet" />
+        <script src="src/api.js" defer></script>
     </head>
     <body>
         <!-- Responsive navbar-->
@@ -49,60 +50,78 @@
                     <div class="col-lg-6 col-xxl-4 mb-5">
                         <div class="card bg-light border-0 h-100">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="fas fa-euro-sign"></i></div>
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
+                                    <i class="fas fa-euro-sign"></i>
+                                </div>
                                 <h2 class="fs-4 fw-bold">Euro</h2>
-                                <input type="text" class = "form-control text-center" placeholder = "Enter dollar amount"></p>
-                                <a class="btn btn-primary btn-lg" href="#!">Convert</a>
+                                <input id="euroInput" type="text" class="form-control text-center" placeholder="Enter dollar amount">
+                                <p>Converted Value: <span id="euroResult">0.00</span> EUR</p>
+                                <button id="euroConvert" class="btn btn-primary btn-lg">Convert</button>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-xxl-4 mb-5">
                         <div class="card bg-light border-0 h-100">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="fas fa-pound-sign"></i></div>
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
+                                    <i class="fas fa-pound-sign"></i>
+                                </div>
                                 <h2 class="fs-4 fw-bold">British Pound</h2>
-                                <input type="text" class = "form-control text-center" placeholder = "Enter dollar amount"></p>
-                                <a class="btn btn-primary btn-lg" href="#!">Convert</a>
+                                <input id="poundInput" type="text" class="form-control text-center" placeholder="Enter dollar amount">
+                                <p>Converted Value: <span id="poundResult">0.00 GBP</span></p>
+                                <button id="poundConvert" class="btn btn-primary btn-lg">Convert</button>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-xxl-4 mb-5">
                         <div class="card bg-light border-0 h-100">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="fas fa-yen-sign"></i></div>
-                                <h2 class="fs-4 fw-bold">Yen</h2>
-                                <input type="text" class = "form-control text-center" placeholder = "Enter dollar amount"></p>
-                                <a class="btn btn-primary btn-lg" href="#!">Convert</a>
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
+                                    <i class="fas fa-yen-sign"></i>
+                                </div>
+                                <h2 class="fs-4 fw-bold">Japanese Yen</h2>
+                                <input id="yenInput" type="text" class="form-control text-center" placeholder="Enter dollar amount">
+                                <p>Converted Value: <span id="yenResult">0.00 JPY</span></p>
+                                <button id="yenConvert" class="btn btn-primary btn-lg">Convert</button>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-xxl-4 mb-5">
                         <div class="card bg-light border-0 h-100">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="fas fa-indian-rupee-sign"></i></div>
-                                <h2 class="fs-4 fw-bold">Rupee</h2>
-                                <input type="text" class = "form-control text-center" placeholder = "Enter dollar amount"></p>
-                                <a class="btn btn-primary btn-lg" href="#!">Convert</a>
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
+                                    <i class="fas fa-indian-rupee-sign"></i>
+                                </div>
+                                <h2 class="fs-4 fw-bold">Indian Rupee</h2>
+                                <input id="rupeeInput" type="text" class="form-control text-center" placeholder="Enter dollar amount">
+                                <p>Converted Value: <span id="rupeeResult">0.00 INR</span></p>
+                                <button id="rupeeConvert" class="btn btn-primary btn-lg">Convert</button>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-xxl-4 mb-5">
                         <div class="card bg-light border-0 h-100">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="fas fa-won-sign"></i></div>
-                                <h2 class="fs-4 fw-bold">Won</h2>
-                                <input type="text" class = "form-control text-center" placeholder = "Enter dollar amount"></p>
-                                <a class="btn btn-primary btn-lg" href="#!">Convert</a>
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
+                                    <i class="fas fa-won-sign"></i>
+                                </div>
+                                <h2 class="fs-4 fw-bold">South Korean Won</h2>
+                                <input id="wonInput" type="text" class="form-control text-center" placeholder="Enter dollar amount">
+                                <p>Converted Value: <span id="wonResult">0.00 KRW</span></p>
+                                <button id="wonConvert" class="btn btn-primary btn-lg">Convert</button>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-xxl-4 mb-5">
                         <div class="card bg-light border-0 h-100">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="fas fa-dollar-sign"></i></div>
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
                                 <h2 class="fs-4 fw-bold">Canadian Dollar</h2>
-                                <input type="text" class = "form-control text-center" placeholder = "Enter dollar amount"></p>
-                                <a class="btn btn-primary btn-lg" href="#!">Convert</a>
+                                <input id="canadianInput" type="text" class="form-control text-center" placeholder="Enter dollar amount">
+                                <p>Converted Value: <span id="canadianResult">0.00 CAD</span></p>
+                                <button id="canadianConvert" class="btn btn-primary btn-lg">Convert</button>
                             </div>
                         </div>
                     </div>
